@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 293919512}
   - component: {fileID: 293919511}
   - component: {fileID: 293919515}
+  - component: {fileID: 293919516}
   m_Layer: 0
   m_Name: Eagle
   m_TagString: Enemy
@@ -265,10 +266,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftCap: 35
   rightCap: 52
-  flyDistance: 5
-  Default:
+  jumpLength: 0
+  jumpHeight: 5
+  ground:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 256
 --- !u!61 &293919512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -353,7 +355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293919510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.44, y: 0.33979967, z: 0}
+  m_LocalPosition: {x: 9.57, y: 1.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -378,6 +380,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &293919516
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293919510}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &383169421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23251,7 +23274,7 @@ PrefabInstance:
     - target: {fileID: 7020144009178696193, guid: e7f2c69b79b43bc488eb5f5dbf871e23,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.12
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 7020144009178696193, guid: e7f2c69b79b43bc488eb5f5dbf871e23,
         type: 3}

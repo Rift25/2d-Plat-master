@@ -6,9 +6,9 @@ public class eagle : Enemy
 {
     [SerializeField] private float leftCap;
     [SerializeField] private float rightCap;
-    [SerializeField] private float flyDistance;
-    [SerializeField] private LayerMask Default;
-
+    [SerializeField] private float jumpLength;
+    [SerializeField] private float jumpHeight;
+    [SerializeField] private LayerMask ground;
     private Collider2D coll;
     private Rigidbody2D rb;
 
@@ -37,12 +37,11 @@ public class eagle : Enemy
                 if (transform.localScale.x != 1)
                 {
                     transform.localScale = new Vector3(1, 1);
-
-                    
                 }
-                if (coll.IsTouchingLayers(Default))
+                if (coll.IsTouchingLayers(ground))
                 {
-                   rb.velocity = new Vector2(-flyDistance, 0);
+                    //Jump
+                    rb.velocity = new Vector2(-jumpLength, jumpHeight);
                 }
             }
             else
@@ -60,9 +59,10 @@ public class eagle : Enemy
                 {
                     transform.localScale = new Vector3(-1, 1);
                 }
-                if (coll.IsTouchingLayers(Default))
+                if (coll.IsTouchingLayers(ground))
                 {
-                    rb.velocity = new Vector2(-flyDistance, 0);
+                    //Jump
+                    rb.velocity = new Vector2(jumpLength, jumpHeight);
                 }
             }
             else
